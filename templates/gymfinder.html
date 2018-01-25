@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="/static/images/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Gymfinity: Find a Gym</title>
+    <style>
+        input[type="submit"] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background:  #1ebfc6;
+  width: 30%;
+  border: 0;
+  border-radius: 4px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+    </style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	{{ form.media }}
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="/static/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="/static/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="/static/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="/static/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="azure" data-image="">
+
+    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="" class="simple-text">
+									<img src='/static/images/logo.png' style='position:absolute; top:0; left:0;' width='80px' height='50px' alt='' />
+                    Gymfinity
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="/accounts/profile">
+                        <i class="pe-7s-graph"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/userdetail">
+                        <i class="pe-7s-user"></i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="/find/">
+                        <i class="pe-7s-gym"></i>
+                        <p>Find gym</p>
+                    </a>
+                </li>
+
+                <li >
+                    <a href="/subscribe">
+                        <i class="pe-7s-cash"></i>
+                        <p>Subscription</p>
+                    </a>
+                </li>
+				<li class="active-pro">
+                    <a href="">
+											<i class="pe-7s-rocket"></i>
+											                        <p>Upgrade</p>
+
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+		<nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="#">Find Gym</a>
+                </div>
+                <div class="collapse navbar-collapse">
+
+
+                    <ul class="nav navbar-nav navbar-right">
+											<li class="dropdown">
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+																	<p>
+									{{request.user.username}}
+									<b class="caret"></b>
+								</p>
+
+														</a>
+														<ul class="dropdown-menu">
+															<li><a href="#">Change password</a></li>
+
+														</ul>
+											</li>
+
+                        <li>
+                            <a href="#">
+                                <p>Log out</p>
+                            </a>
+                        </li>
+						<li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header" data-background-color="blue">
+                        <center><h4 class="title">Find Gyms Near By</h4></center>
+                    </div>
+										<div class="card-content">
+										<center>		
+	<form action="/find/" method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Find Nearby Gyms"/>
+	</form>
+
+
+</center>
+																										</table>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+</body>
+
+	<script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="/static/js/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="/static/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="/static/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="/static/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="/static/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="/static/js/demo.js"></script>
+
+</html>

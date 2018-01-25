@@ -1,0 +1,5 @@
+:repo:deb http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial main
+libgdal-dev
+gdal-bin
+python3-gdal
+libsqlite3-mod-spatialite

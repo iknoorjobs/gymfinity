@@ -1,0 +1,5 @@
+*.pyc
+
+gymfinity/secret.py
+
+db.sqlite3
